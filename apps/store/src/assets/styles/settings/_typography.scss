@@ -1,0 +1,114 @@
+// ------------------------------------------
+// Body Text Font Sizes
+// ------------------------------------------
+$body-text: (
+  "h1": (
+    "desktop": (
+      font-size: 40px,
+      line-height: 48px,
+    ),
+    "small": (
+      font-size: 26px,
+      line-height: 32px,
+    ),
+  ),
+  "h2": (
+    "desktop": (
+      font-size: 32px,
+      line-height: 39px,
+      letter-spacing: 0.3px,
+    ),
+    "small": (
+      font-size: 24px,
+      line-height: 32px,
+    ),
+  ),
+  "h3": (
+    "desktop": (
+      font-size: 24px,
+      line-height: 29px,
+      letter-spacing: 0,
+    ),
+    "small": (
+      font-size: 19px,
+      line-height: 24px,
+    ),
+  ),
+  "h4": (
+    "desktop": (
+      font-size: 20px,
+      line-height: 26px,
+      letter-spacing: 0,
+    ),
+    "small": (
+      font-size: 16px,
+      line-height: 21px,
+    ),
+  ),
+  "h5": (
+    "desktop": (
+      font-size: 18px,
+      line-height: 27px,
+      letter-spacing: 0,
+    ),
+    "small": (
+      font-size: 16px,
+      line-height: 21px,
+    ),
+  ),
+  "h6": (
+    "desktop": (
+      font-size: 16px,
+      line-height: 24px,
+      letter-spacing: 0,
+    ),
+    "small": (
+      font-size: 15px,
+      line-height: 21px,
+    ),
+  ),
+  "body": (
+    "desktop": (
+      font-size: 15px,
+      line-height: 24px,
+      letter-spacing: 0,
+    ),
+    "small": (
+      font-size: 14px,
+      line-height: 21px,
+    ),
+  ),
+  "label": (
+    "desktop": (
+      font-size: 16px,
+      line-height: 24px,
+      letter-spacing: 2px,
+    ),
+    "small": (
+      font-size: 13px,
+      line-height: 18px,
+    ),
+  ),
+  "date": (
+    "desktop": (
+      font-size: 13px,
+      line-height: 18px,
+      letter-spacing: 0,
+    ),
+    "small": (
+      font-size: 13px,
+      line-height: 18px,
+    ),
+  ),
+  "tag": (
+    "desktop": (
+      font-size: 12px,
+      line-height: 18px,
+      letter-spacing: -0.3px,
+    ),
+    "small": (
+      font-size: 12px,
+      line-height: 18px,
+    ),
+  ),
+);

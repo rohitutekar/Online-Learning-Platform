@@ -1,0 +1,101 @@
+// ------------------------------------------
+// Font helpers
+// ------------------------------------------
+@mixin font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-family($font: regular) {
+  @if $font == "regular" {
+    font-family: $font__main-regular;
+  } @else if $font == "medium" {
+    font-family: $font__main-medium;
+  } @else if $font == "bold" {
+    font-family: $font__main-bold;
+  } @else if $font == "semibold" {
+    font-family: $font__main-semibold;
+  } @else {
+    font-family: $font;
+  }
+}
+
+/**
+ * Add font scale with media query as per configuration on $body-text
+ * Ex: @include body-text( h1 );
+ * This will add font-size and line-height with different breakpoints.
+ */
+@mixin body-text($level: normal, $body-text: $body-text, $device-size: false) {
+  @if type-of($body-text) != "map" {
+    @error "`#{$body-text}` is not a valid value for $values. It must be a list.";
+  }
+
+  $size: map_get($body-text, $level);
+
+  @if type-of($size) == "map" {
+    @if $device-size == false {
+      @each $device, $values in $size {
+        @if $device != "small" {
+          @include mq($from: $device) {
+            font-size: map_get($values, "font-size");
+            line-height: map_get($values, "line-height");
+            letter-spacing: map_get($values, "letter-spacing");
+          }
+        } @else {
+          font-size: map_get($values, "font-size");
+          line-height: map_get($values, "line-height");
+          letter-spacing: map_get($values, "letter-spacing");
+        }
+      }
+    } @else {
+      $device-values: map_get($size, $device-size);
+
+      font-size: map_get($device-values, "font-size");
+      line-height: map_get($device-values, "line-height");
+      letter-spacing: map_get($device-values, "letter-spacing");
+    }
+  }
+}
+
+// ------------------------------------------
+// Generic helpers
+// ------------------------------------------
+@mixin text-styling($size, $lineHeight, $weight: 400, $style: normal) {
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lineHeight;
+}
+
+@mixin focus-shadow() {
+  box-shadow: 0 0 0 3px rgb(75 96 235 / 40%);
+}
+
+@mixin card-shadow() {
+  box-shadow: 0 8px 40px rgb(82 105 187 / 16%);
+}
+
+@mixin disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@mixin spread-map($map: ()) {
+  @each $key, $value in $map {
+    #{$key}: $value;
+  }
+}
+
+@mixin linear-gradient-text($color, $width: fit-content) {
+  width: $width;
+  background: $color;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin revert-linear-gradient-text {
+  width: fit-content;
+  background: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+}

@@ -16,7 +16,7 @@
         "main": "apps/store/src/main.tsx",
         "tsConfig": "apps/store/tsconfig.app.json",
         "assets": ["apps/store/src/favicon.ico", "apps/store/src/assets"],
-        "styles": ["apps/store/src/styles.scss"],
+        "styles": ["apps/store/src/assets/styles/main.scss"],
         "scripts": [],
         "webpackConfig": "apps/store/webpack.config.js"
       },

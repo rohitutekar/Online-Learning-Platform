@@ -1,0 +1,185 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: $-theme-font;
+
+  @include body-text(body);
+
+  background: $-color-white;
+  color: $-typography-color-main;
+  overflow-x: hidden;
+}
+
+figure {
+  max-width: 100%;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  cursor: pointer;
+  color: $-color-primary;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  a:active {
+    color: $-color-secondary;
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+p {
+  @include body-text(body);
+
+  &:empty {
+    display: none;
+  }
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+// ------------------------------------------
+// Headings
+// ------------------------------------------
+h1,
+.h1 {
+  @include body-text(h1);
+}
+
+h2,
+.h2 {
+  @include body-text(h2);
+}
+
+h3,
+.h3 {
+  @include body-text(h3);
+}
+
+h4,
+.h4 {
+  @include body-text(h4);
+}
+
+h5,
+.h5 {
+  @include body-text(h5);
+}
+
+h6,
+.h6 {
+  @include body-text(h6);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  text-rendering: optimizelegibility;
+}
+
+// ------------------------------------------
+// Lists
+// ------------------------------------------
+
+ul {
+  padding: 0;
+  margin: 0 0 10px 25px;
+}
+
+ol {
+  margin: 0 0 18px;
+}
+
+ul,
+ol {
+  li > ul,
+  li > ol {
+    margin-bottom: 0;
+    margin-left: 18px;
+  }
+
+  &.no-bullet {
+    &,
+    ul,
+    ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin: 0 24px 24px;
+}
+
+// ------------------------------------------
+// Table
+// ------------------------------------------
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+label,
+.label {
+  @include body-text(label);
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+object {
+  max-width: 100%;
+}
+
+body > iframe {
+  display: none;
+}

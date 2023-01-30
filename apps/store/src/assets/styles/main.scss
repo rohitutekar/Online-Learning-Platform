@@ -1,0 +1,14 @@
+// Mixin for media queries
+@import "./base";
+
+// Override bootstrap theme colors and import the necessary Bootstrap files
+$primary: $-color-primary;
+$secondary: $-color-secondary;
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+@import "bootstrap";
+
+// Generic styles
+@import "./generic/generic";

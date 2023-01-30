@@ -1,0 +1,11 @@
+$breakpoints: (
+  mobile: 320px,
+  tablet: 768px,
+  desktop: 992px,
+  wide: 1200px,
+  ultrawide: 1400px,
+) !default;
+
+@import "~sass-mq/mq";
+@import "./tools/tools";
+@import "./settings/settings";
